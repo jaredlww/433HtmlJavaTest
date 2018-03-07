@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{text-align:center}
+
+div.tip{background-color: gray; 
+        padding: 20px;
+        visibility: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+       }
+</style>
+</head>
+<body>
+<h1>登录</h1>
+
+用户: <input id="user" type="text"><br>
+密码: <input id="pwd" type="text"><br>
+<button type="button" onclick="myFunction()">确定</button>
+
+<div id="tip" class="tip"> </div>
+<script>
+function myFunction()
+{
+var a=document.getElementById("user").value;
+var b=document.getElementById("pwd").value;
+if(a == "" || a == null || a == undefined || b == "" || b == null || b == undefined)
+	{
+	document.getElementById("tip").innerHTML="用户或者密码不能为空";//设置不为空的提示
+    document.getElementById("tip").style.visibility="visible";//设置显示
+	}
+}
+</script>
+</body>
+</html>

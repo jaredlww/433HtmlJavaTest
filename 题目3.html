@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body{text-align:center}
+div.color{ margin-left: auto;
+           margin-right: auto;
+		   width: 200px;
+		   height: 200px;
+           border:1px solid #FF6600;
+           background-color:#FFFFFF;
+         }
+</style>
+</head>
+<body>
+<div id=color class=color></div>
+<button type="button" onclick="startChange()">开始轮换</button>
+<button type="button" onclick="stopChange()">结束轮换</button>
+<script>
+var x=0;
+var control;
+function startChange(){
+  control=setInterval("changeColor()",1000);
+}
+function stopChange(){
+  control=window.clearInterval(control);
+}
+function changeColor()
+{
+var colorArray=["#FF0000","#FF6600","#CCFF00","#00FF00","#00FFFF","#0000FF","#FF0066"];//赤橙黄绿青蓝紫
+document.getElementById("color").style.backgroundColor=colorArray[x];//设置显示颜色
+x++;
+if(x==7){
+  x=0;
+}
+
+}
+</script>
+</body>
+</html>
